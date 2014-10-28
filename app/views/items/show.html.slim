@@ -1,0 +1,25 @@
+h1 = resource.title
+p = resource.description
+h3 views
+pre = JSON.pretty_generate(resource.viewed_with_this)
+
+h3 viewed with this
+table
+  - resource.items_viewed_with.each do |item|
+    tr
+      td = item.id
+      td = item.title
+
+h3 bought with this
+table
+  - resource.items_bought_with.each do |item|
+    tr
+      td = item.id
+      td = item.title
+
+h3 carted with this
+table
+  - resource.items_carted_with.each do |item|
+    tr
+      td = item.id
+      td = item.title

@@ -5,6 +5,9 @@ class CreateItems < ActiveRecord::Migration
       t.attachment :image
       t.text :description
       t.integer :price
+      t.hstore :bought_with_this, default: {}
+      t.hstore :carted_with_this, default: {}
+      t.hstore :viewed_with_this, default: {}
 
       t.timestamps
     end

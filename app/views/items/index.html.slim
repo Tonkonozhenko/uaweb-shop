@@ -1,0 +1,6 @@
+table
+  - collection.each do |resource|
+    tr
+      td = resource.id
+      td = resource.title
+      td = link_to 'View', item_path(resource)
