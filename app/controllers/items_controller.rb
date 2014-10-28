@@ -1,14 +1,12 @@
 class ItemsController < ApplicationController
   inherit_resources
-  actions :index, :show
+  actions :show
 
+  def index
+    @items = Item.order('id DESC').sort_by { |i| [@session.bought?(i) ? 0 : 1, @session.carted?(i) ? 1 : 0, -i.views] }
+  end
+  
   def show
     @session.view(resource)
-    show!
-  end
-
-  protected
-  def collection
-    @projects ||= end_of_association_chain.order('id DESC')
   end
 end

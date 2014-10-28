@@ -11,7 +11,7 @@ table
       td = oi.count
       td = link_to '+', cart_inc_path(order_item_id: oi.id), method: :post
       td = link_to '-', cart_dec_path(order_item_id: oi.id), method: :post
-      td = link_to 'x', cart_del_path(order_item_id: oi.id), method: :delete
+      td = link_to 'x', cart_path(order_item_id: oi.id), method: :delete
 
 
 = link_to 'buy', new_order_path

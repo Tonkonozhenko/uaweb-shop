@@ -1,10 +1,16 @@
 table
   tr
-   th id
-   th title
-  - collection.each do |resource|
+    th id
+    th title
+    th bought?
+    th views
+    th carted?
+  - @items.each do |resource|
     tr
       td = resource.id
       td = resource.title
+      td = @session.bought?(resource) ? 'T' : 'F'
+      td = resource.views
+      td = @session.carted?(resource) ? 'T' : 'F'
       td = link_to 'View', item_path(resource)
       td = link_to 'Add to cart', cart_add_path(item_id: resource), method: :post

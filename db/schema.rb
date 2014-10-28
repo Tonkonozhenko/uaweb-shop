@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141028203804) do
     t.datetime "image_updated_at"
     t.text     "description"
     t.integer  "price"
+    t.integer  "views",              default: 0
     t.hstore   "bought_with_this",   default: ""
     t.hstore   "carted_with_this",   default: ""
     t.hstore   "viewed_with_this",   default: ""

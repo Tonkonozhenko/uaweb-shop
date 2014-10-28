@@ -2,5 +2,6 @@
   Item.create(
       title: "Title ##{i}",
       description: "Description ##{i}",
+      price: i
   )
 end

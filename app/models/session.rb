@@ -24,11 +24,19 @@ class Session < ActiveRecord::Base
 
       # save that current items viewed in this session
       if viewed.index(item.id).nil?
+        item.view!
         viewed << item.id
-        viewed.uniq!
         viewed_will_change!
         save
       end
     end
+  end
+
+  def bought?(item)
+    @bought_item_ids = orders.map { |o| o.item_ids }.flatten.index(item.id)
+  end
+
+  def carted?(item)
+    @carted_item_ids = cart.item_ids.index(item.id)
   end
 end
