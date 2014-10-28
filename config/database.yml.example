@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: uwc-shop_development
+
+test:
+  <<: *default
+  database: uwc-shop_test
+
+production:
+  <<: *default
+  database: uwc-shop_production
+  username: uwc-shop
+  password: <%= ENV['UWC-SHOP_DATABASE_PASSWORD'] %>
