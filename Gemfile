@@ -12,3 +12,5 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'dotenv-rails'
 gem 'inherited_resources', '~> 1.4.1'
+gem 'thin'
+gem 'paperclip'
