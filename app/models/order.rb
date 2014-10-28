@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  has_many :order_items
+  has_many :order_items, autosave: true
   has_many :items, through: :order_items
 
   scope :carts, -> { where(buyer_name: nil) }

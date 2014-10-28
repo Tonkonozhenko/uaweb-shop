@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
     else
       @cart.add(item)
       @cart.items << item
+      @cart.save
     end
 
     redirect_to request.referer
