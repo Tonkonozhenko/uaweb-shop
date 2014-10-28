@@ -1,4 +1,11 @@
 class Session < ActiveRecord::Base
+  has_one :cart, -> { carts }, class_name: Order
+  has_many :orders, -> { orders }, class_name: Order
+
+  after_initialize do
+    cart.presence || build_cart
+  end
+
   def view(item)
     transaction do
       # viewed - items viewed in this session
@@ -7,10 +14,11 @@ class Session < ActiveRecord::Base
         Item.find(viewed).each do |i|
           i.inc_viewed(item.id)
           i.save
+
+          # mark that new item is viewed with this item
+          item.inc_viewed(i.id)
         end
 
-        # mark that new item is viewed with viewed earlier ones
-        viewed.each { |v| item.inc_viewed(v) }
         item.save
       end
 

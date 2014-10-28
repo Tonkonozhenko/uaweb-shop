@@ -1,0 +1,8 @@
+table
+  tr
+    th id
+    th price
+  - @orders.each do |order|
+    tr
+      td = order.id
+      td = order.price

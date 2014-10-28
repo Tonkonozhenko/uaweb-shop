@@ -1,6 +1,10 @@
 table
+  tr
+   th id
+   th title
   - collection.each do |resource|
     tr
       td = resource.id
       td = resource.title
       td = link_to 'View', item_path(resource)
+      td = link_to 'Add to cart', cart_add_path(item_id: resource), method: :post

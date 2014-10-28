@@ -30,7 +30,14 @@ class Item < ActiveRecord::Base
   # -------
 
   def items_bought_with
-    []
+    @items_bought_with =
+        if @items_bought_with
+          @items_bought_with
+        else
+          ids = bought_with_this.sort_by(&:last).map(&:first).reverse[0...COUNT].map(&:to_i)
+          ids += (Item.pluck(:id) - ids).sample(COUNT - ids.length) if ids.length < COUNT
+          Item.find(ids)
+        end
   end
 
   def items_viewed_with
@@ -38,13 +45,20 @@ class Item < ActiveRecord::Base
         if @items_viewed_with
           @items_viewed_with
         else
-          ids = Item.find(87).viewed_with_this.sort_by(&:last).map(&:first).reverse[0...COUNT].map(&:to_i)
+          ids = viewed_with_this.sort_by(&:last).map(&:first).reverse[0...COUNT].map(&:to_i)
           ids += (Item.pluck(:id) - ids).sample(COUNT - ids.length) if ids.length < COUNT
           Item.find(ids)
         end
   end
 
   def items_carted_with
-    []
+    @items_carted_with =
+        if @items_carted_with
+          @items_carted_with
+        else
+          ids = carted_with_this.sort_by(&:last).map(&:first).reverse[0...COUNT].map(&:to_i)
+          ids += (Item.pluck(:id) - ids).sample(COUNT - ids.length) if ids.length < COUNT
+          Item.find(ids)
+        end
   end
 end

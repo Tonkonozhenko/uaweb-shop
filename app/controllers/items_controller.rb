@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   actions :index, :show
 
   def show
-    Session.where(session_id: session.id).first_or_create.view(resource)
+    @session.view(resource)
     show!
   end
 
