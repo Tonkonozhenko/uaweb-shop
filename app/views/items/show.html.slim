@@ -30,19 +30,19 @@
       - resource.items_viewed_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = image_tag('examples/similar-models.png')
+            = link_to(image_tag('examples/similar-models.png'), item_path(item))
     .bought-with-this.col-md-12.col-sm-12.row.more-items
       h4.uppercase = t('item.suitable_accessories')
       - resource.items_bought_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = image_tag('examples/accessories.png')
+            = link_to(image_tag('examples/accessories.png'),item_path(item))
     .must-buy.col-md-12.col-sm-12.row.more-items
       h4.uppercase = t('item.you_mast_buy')
       - resource.items_carted_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = image_tag('examples/must_buy.png')
+            = link_to(image_tag('examples/must_buy.png'),item_path(item))
 
 
     /h3 = "views: #{resource.views}"
