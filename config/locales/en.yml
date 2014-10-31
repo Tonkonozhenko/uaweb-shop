@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  header:
+    shop: Shop
+    collection: Collection
+    collaboration: Collaboration
+    about: About
+    contacts: Contacts
+
+  footer:
+    how_to_pay: How to pay
+    sizes: Sizes
+    shipping: Shippnig
+    all_rights_reserved: All Rights Reserved ua web challenge
+
