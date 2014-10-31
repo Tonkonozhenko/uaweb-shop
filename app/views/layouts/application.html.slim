@@ -8,13 +8,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   body
     .main-wrapper
+      = render 'layouts/search'
       .header
         = render 'layouts/header'
       .container-fluid
         = yield
 
-    .footer
-      = render 'layouts/footer'
+      .footer
+        = render 'layouts/footer'
 
 
       /<!DOCTYPE html>

@@ -1,0 +1,9 @@
+.search-wrap
+  .pull-right
+    = link_to '#', class: 'close', id: 'close' do
+      i.fa.fa-times.fa-3x
+  .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2.search-form
+    .search-field
+      input type="text" placeholder= t('search.find')
+      button.search-ico
+        i.fa.fa-search.fa-2x
