@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  respond_to :html, :json
+
   before_filter except: [:index] do
     @cart = @session.cart
   end
@@ -37,7 +39,14 @@ class OrdersController < ApplicationController
       @cart.save
     end
 
-    redirect_to request.referer
+    respond_to do |format|
+      format.json do
+
+      end
+      format.html do
+        redirect_to request.referer
+      end
+    end
   end
 
   def inc
