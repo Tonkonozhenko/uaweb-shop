@@ -18,3 +18,11 @@
 $(document).ready ->
   if document.location.pathname == "/"
     $('body').addClass('root')
+
+  $("#search").on "click", ->
+    $(".search-wrap").css "visibility", "visible"
+    $("body").css "overflow", "hidden"
+
+  $("#close").on "click", ->
+    $(".search-wrap").css "visibility", "hidden"
+    $("body").css "overflow", "visible"
