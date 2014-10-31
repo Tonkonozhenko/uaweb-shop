@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  actions:
+    view: View
+
   header:
     shop: Shop
     collection: Collection
@@ -32,4 +35,26 @@ en:
     sizes: Sizes
     shipping: Shippnig
     all_rights_reserved: All Rights Reserved ua web challenge
+
+  items:
+    clothing:
+      view_all: View all clothing
+      suits: Suits
+      t_shirts: T-shirts
+      jackets: Jackets
+    collections:
+      collections: Collections
+    color:
+      color: Color
+    price:
+      price: Price
+      from: From
+      to: To
+
+  item:
+    buy_it: Buy it
+    colors: 'Colors: '
+    similar_models: 'Similar models: '
+    suitable_accessories: 'Suitable accessories for this costume: '
+    you_mast_buy: 'You must buy it with this suit: '
 

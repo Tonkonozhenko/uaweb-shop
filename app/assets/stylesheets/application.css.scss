@@ -48,10 +48,17 @@ ul {
   text-transform: uppercase;
 }
 
+.strong {
+  font-weight: bold;
+}
+
 // Header styles
 .header {
   .outer {
     padding: 5px 0 15px;
+    .header-wrap {
+      border-bottom: 1px solid #000;
+    }
     .nav-actions {
       height: 60px;
       margin-right: 20px;
@@ -72,15 +79,20 @@ ul {
     }
   }
   .banner {
-    .image img {
-      width: 100%;
-    }
+    display: none;
+  }
+}
+
+.root .header .banner {
+  display: block;
+  .image img {
+    width: 100%;
   }
 }
 
 // Footer Styles
 .footer {
-  margin-top: 0;
+  margin-top: 20px;
   padding: 3em 1.5em;
   border-top: 1px solid black;
   .footer-left-side, .footer-right-side {
@@ -108,5 +120,53 @@ ul {
         }
       }
     }
+  }
+}
+
+//Media queries
+.col-20p, .col-80p {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
+
+.col-20p {
+  width: 20%;
+}
+
+.col-80p {
+  width: 80%;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
   }
 }

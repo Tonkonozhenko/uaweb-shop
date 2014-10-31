@@ -1,29 +1,74 @@
-h1 = resource.title
-p = resource.description
-h3 = "views: #{resource.views}"
-pre = JSON.pretty_generate(resource.viewed_with_this)
-h3 buyes
-pre = JSON.pretty_generate(resource.bought_with_this)
-h3 cards
-pre = JSON.pretty_generate(resource.carted_with_this)
+.item-wrap
+  .col-md-6.col-sm-6.col-xs-6
+    .big-image
+      = image_tag('examples/example-1.png')
+    .small-images
+      .col-md-3.col-sm-3.col-xs-6
+        = image_tag('examples/example-1.png')
+      .col-md-3.col-sm-3.col-xs-6
+        = image_tag('examples/example-1.png')
+      .col-md-3.col-sm-3.col-xs-6
+        = image_tag('examples/example-1.png')
+  .col-md-6.col-sm-6.col-xs-6.row
+    .col-md-8.col-sm-8.row
+      h1 = resource.title
+    .col-md-4.col-sm-4.item-views
+      h3
+        i.fa.fa-eye &nbsp
+        = resource.views
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        .strong.uppercase.price = t('items.price.price')
+        .strong.price resource.price
+      .col-md-12.col-sm-12.col-xs-12.buy-it
+        = link_to t('item.buy_it'), '', class: 'buy-button'
+    p = resource.description
+    .possible-colors.col-md-12.col-sm-12.row.more-items
+      h4.uppercase = t('item.colors')
+    .similar-models.col-md-12.col-sm-12.row.more-items
+      h4.uppercase = t('item.similar_models')
+      - resource.items_viewed_with.each do |item|
+        .col-md-5ths.col-sm-3.col-xs-6
+          .more-item-image
+            = image_tag('examples/similar-models.png')
+    .bought-with-this.col-md-12.col-sm-12.row.more-items
+      h4.uppercase = t('item.suitable_accessories')
+      - resource.items_bought_with.each do |item|
+        .col-md-5ths.col-sm-3.col-xs-6
+          .more-item-image
+            = image_tag('examples/accessories.png')
+    .must-buy.col-md-12.col-sm-12.row.more-items
+      h4.uppercase = t('item.you_mast_buy')
+      - resource.items_carted_with.each do |item|
+        .col-md-5ths.col-sm-3.col-xs-6
+          .more-item-image
+            = image_tag('examples/must_buy.png')
 
-h3 viewed with this
-table
-  - resource.items_viewed_with.each do |item|
-    tr
-      td = item.id
-      td = item.title
 
-h3 bought with this
-table
-  - resource.items_bought_with.each do |item|
-    tr
-      td = item.id
-      td = item.title
+    /h3 = "views: #{resource.views}"
+    /pre = JSON.pretty_generate(resource.viewed_with_this)
+    /h3 buyes
+    /pre = JSON.pretty_generate(resource.bought_with_this)
+    /h3 cards
+    /pre = JSON.pretty_generate(resource.carted_with_this)
 
-h3 carted with this
-table
-  - resource.items_carted_with.each do |item|
-    tr
-      td = item.id
-      td = item.title
+    /h3 viewed with this
+    /table
+    /- resource.items_viewed_with.each do |item|
+    /  tr
+    /    td = item.id
+    /    td = item.title
+
+    /h3 bought with this
+    /table
+    /- resource.items_bought_with.each do |item|
+    /  tr
+    /    td = item.id
+    /    td = item.title
+
+    /h3 carted with this
+    /table
+    - resource.items_carted_with.each do |item|
+      /tr
+      /  td = item.id
+      /  td = item.title

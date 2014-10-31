@@ -1,3 +1,78 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.items-wrap {
+  .nav-item {
+    margin: 5px 0;
+    border-bottom: 1px solid #808080;
+    &:first-child {
+      border-top: none;
+    }
+    &:nth-child(2) {
+      border-top: 1px solid #808080;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  ul li {
+    a {
+      display: block;
+      text-decoration: none;
+      &:hover {
+        background: #dddddd;
+        color: #000;
+      }
+
+    }
+  }
+  .item {
+    margin: 5px 0;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.item-wrap {
+  .big-image img {
+    width: 100%;
+  }
+  .small-images {
+    margin-top: 10px;
+    img {
+      width: 100%;
+    }
+  }
+  .item-views {
+    text-align: right;
+  }
+  .price {
+    font-size: 20px;
+    width: 70px;
+    float: left;
+  }
+  .buy-it {
+    margin: 20px 0;
+    .buy-button {
+      border: 2px solid #000;
+      padding: 5px 10px;
+      text-decoration: none;
+      &:hover {
+        border: 2px solid #808080;
+        color: #808080;
+      }
+    }
+  }
+  .more-item-image img {
+    width: 100%;
+  }
+  .more-items {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #808080;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,4 +1,25 @@
-table
+.items-wrap
+  .col-20p
+    .nav-item.clothing.uppercase.strong = t('items.clothing.view_all')
+    ul.clothing
+      li.uppercase = link_to t('items.clothing.suits'), ''
+      li.uppercase = link_to t('items.clothing.t_shirts'), ''
+      li.uppercase = link_to t('items.clothing.jackets'), ''
+    .nav-item.collections.uppercase.strong = t('items.collections.collections')
+    .nav-item.color.uppercase.strong = t('items.color.color')
+    .nav-item.price.uppercase.strong = t('items.price.price')
+  .col-80p
+    .col-lg-12.col-md-12.col-sm-12.items
+      - @items.each do | item |
+        .col-lg-3.col-md-4.col-sm-6.col-xs-6.item
+          = link_to item_path(item) do
+            = image_tag('examples/example-1.png')
+            .title.centered = item.title
+            .price.centered item.price
+
+
+
+/table
   tr
     th id
     th title
