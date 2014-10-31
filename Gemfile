@@ -17,3 +17,6 @@ gem 'paperclip'
 gem 'slim-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
+
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'font-awesome-rails', '~> 4.0.3.0'
