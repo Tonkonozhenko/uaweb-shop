@@ -65,8 +65,11 @@
       }
     }
   }
-  .more-item-image img {
-    width: 100%;
+  .more-item-image {
+    margin: 5px 0;
+    img {
+      width: 100%;
+    }
   }
   .more-items {
     padding-bottom: 10px;
