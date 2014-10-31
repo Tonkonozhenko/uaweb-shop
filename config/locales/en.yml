@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  title: UWC-SHOP
   actions:
     view: View
 
@@ -60,3 +61,11 @@ en:
 
   search:
     find: 'Find me if u can'
+
+  cart:
+    title: Title
+    count: Count
+    price: Price X1
+    image: Image
+    navigation: Navigation
+    total: Total

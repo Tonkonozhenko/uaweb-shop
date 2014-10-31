@@ -1,17 +1,65 @@
-table
-  tr
-    th id
-    th title
-    th count
-  - @cart.order_items.each do |oi|
-    - item = oi.item
-    tr
-      td = item.id
-      td = item.title
-      td = oi.count
-      td = link_to '+', cart_inc_path(order_item_id: oi.id), method: :post
-      td = link_to '-', cart_dec_path(order_item_id: oi.id), method: :post
-      td = link_to 'x', cart_path(order_item_id: oi.id), method: :delete
+/.orders-wrap
+/  .col-md-12.col-sm-12.col-xs-12.cart-info
+/    .col-md-2.col-sm-2.info.centered
+/      = t('cart.title')
+/    .col-md-3.col-sm-3.info.centered
+/      = t('cart.image')
+/    .col-md-1.col-sm-1.info.centered
+/      = t('cart.count')
+/    .col-md-2.col-sm-2.info.centered
+/      = t('cart.price')
+/    .col-md-4.col-sm-4.info.centered
+/      = t('cart.navigation')
 
+.orders-wrap.col-md-12.col-sm-12
+  - total = 0
+  table.table.table-bordered
+    thead
+      tr
+        th.col-md-2.col-sm-2.centered.information = t('cart.title')
+        th.col-md-2.col-sm-2.centered.information = t('cart.image')
+        th.col-md-1.col-sm-1.centered.information = t('cart.count')
+        th.col-md-2.col-sm-2.centered.information = t('cart.price')
+        th.col-md-3.col-sm-3.centered.information = t('cart.navigation')
+    tbody
+    - @cart.order_items.each do |oi|
+      - item = oi.item
+      tr
+        td.col-md-2.col-sm-2.centered.information = item.title
+        td.col-md-2.col-sm-2.centered.information = image_tag('examples/example-1.png')
+        td.col-md-1.col-sm-1.centered.information = oi.count
+        td.col-md-2.col-sm-2.centered.information = oi.price
+        - total += oi.price
+        td.col-md-3.col-sm-3.centered.information
+          .col-md-4.col-sm-4.centered.information
+            = link_to cart_inc_path(order_item_id: oi.id), method: :post do
+              i.fa.fa-plus.plus
+          .col-md-4.col-sm-4.centered.information
+            = link_to cart_dec_path(order_item_id: oi.id), method: :post do
+              i.fa.fa-minus.minus
+          .col-md-4.col-sm-4.centered.information
+            = link_to cart_path(order_item_id: oi.id), method: :delete do
+              i.fa.fa-times.delete
+  .strong.col-md-2.col-sm-2 = t('cart.total')
+  .strong.col-md-1.col-sm-1 = "₴#{total}"
+  .col-md-2.col-md-offset-7.col-sm-2.col-sm-offset-7.right.no-right
+    = link_to 'buy', new_order_path, class: 'buy'
 
-= link_to 'buy', new_order_path
+      /
+      /      table
+      /  tr
+      /    th id
+      /    th title
+      /    th count
+      /  - @cart.order_items.each do |oi|
+      /    - item = oi.item
+      /    tr
+      /      td = item.id
+      /      td = item.title
+      /      td = oi.count
+      /      td = link_to '+', cart_inc_path(order_item_id: oi.id), method: :post
+      /      td = link_to '-', cart_dec_path(order_item_id: oi.id), method: :post
+      /      td = link_to 'x', cart_path(order_item_id: oi.id), method: :delete
+      /
+      /
+      /= link_to 'buy', new_order_path

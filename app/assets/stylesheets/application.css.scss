@@ -52,6 +52,26 @@ ul {
   font-weight: bold;
 }
 
+.plus {
+  color: green;
+}
+
+.minus {
+  color: orange;
+}
+
+.delete {
+  color: red;
+}
+
+.no-right {
+  padding-right: 0;
+}
+
+.right {
+  text-align: right;
+}
+
 // Header styles
 .header {
   .outer {
