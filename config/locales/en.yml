@@ -23,6 +23,9 @@ en:
   title: UWC-SHOP
   actions:
     view: View
+    fail: Fail
+    success: Success
+    try_again: Try again
 
   header:
     shop: Shop
@@ -70,3 +73,4 @@ en:
     navigation: Navigation
     total: Total
     make_order: Make order
+    enter_your_name: To make order enter your name

@@ -33,21 +33,18 @@
         td.col-md-3.col-sm-3.centered.information
           .col-md-4.col-sm-4.centered.information
             = link_to cart_inc_path(order_item_id: oi.id), method: :post do
-              i.fa.fa-plus.plus
+              i.fa.fa-plus.green
           .col-md-4.col-sm-4.centered.information
             = link_to cart_dec_path(order_item_id: oi.id), method: :post do
-              i.fa.fa-minus.minus
+              i.fa.fa-minus.orange
           .col-md-4.col-sm-4.centered.information
             = link_to cart_path(order_item_id: oi.id), method: :delete do
-              i.fa.fa-times.delete
+              i.fa.fa-times.red
   .strong.col-md-2.col-sm-2 = t('cart.total')
   .strong.col-md-1.col-sm-1 = "₴#{total}"
   .col-md-2.col-md-offset-7.col-sm-2.col-sm-offset-7.right.no-right
-    = link_to t('cart.make_order'), new_order_path, class: 'buy'
+    = link_to t('cart.make_order'), new_order_path, class: 'buy brand-button'
 
-
-  .col-md-12.col-sm-12.order-buy
-    = render 'orders/new'
     /
       /      table
       /  tr
