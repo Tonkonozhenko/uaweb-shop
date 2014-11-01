@@ -1,5 +1,5 @@
 .items-wrap
-  .col-20p
+  .col-20p.col-xs-12
     .nav-item.clothing.uppercase.strong = t('items.clothing.view_all')
     ul.clothing
       li.uppercase = link_to t('items.clothing.suits'), ''
@@ -8,7 +8,7 @@
     .nav-item.collections.uppercase.strong = t('items.collections.collections')
     .nav-item.color.uppercase.strong = t('items.color.color')
     .nav-item.price.uppercase.strong = t('items.price.price')
-  .col-80p
+  .col-80p.col-xs-12
     .col-lg-12.col-md-12.col-sm-12.items
       - @items.each do | item |
         .col-lg-3.col-md-4.col-sm-6.col-xs-6.item
