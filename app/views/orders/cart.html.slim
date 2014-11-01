@@ -25,7 +25,7 @@
     - @cart.order_items.each do |oi|
       - item = oi.item
       tr
-        td.col-md-2.col-sm-2.centered.information = item.title
+        td.col-md-2.col-sm-2.centered.information = link_to item.title, item_path(item.id)
         td.col-md-2.col-sm-2.centered.information = image_tag('examples/example-1.png')
         td.col-md-1.col-sm-1.centered.information = oi.count
         td.col-md-2.col-sm-2.centered.information = oi.price
@@ -43,9 +43,12 @@
   .strong.col-md-2.col-sm-2 = t('cart.total')
   .strong.col-md-1.col-sm-1 = "₴#{total}"
   .col-md-2.col-md-offset-7.col-sm-2.col-sm-offset-7.right.no-right
-    = link_to 'buy', new_order_path, class: 'buy'
+    = link_to t('cart.make_order'), new_order_path, class: 'buy'
 
-      /
+
+  .col-md-12.col-sm-12.order-buy
+    = render 'orders/new'
+    /
       /      table
       /  tr
       /    th id

@@ -21,7 +21,7 @@
         .strong.uppercase.price = t('items.price.price')
         .strong.price = "₴#{resource.price}"
       .col-md-12.col-sm-12.col-xs-12.buy-it
-        = link_to t('item.buy_it'), cart_add_path(item_id: resource), class: 'buy-button', method: :post
+        = link_to t('item.buy_it'), cart_add_path(item_id: resource), class: 'buy-button uppercase', method: :post
     p = resource.description
     .possible-colors.col-md-12.col-sm-12.row.more-items
       h4.uppercase = t('item.colors')

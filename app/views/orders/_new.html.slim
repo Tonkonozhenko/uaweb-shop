@@ -1,0 +1,4 @@
+.col-md-12.order-buy
+  = form_for @cart, url: cart_path, method: :post do |f|
+    = f.text_field :buyer_name, class: 'order-input col-md-3 col-sm-3 col-xs-8'
+    = f.submit 'Buy', class: 'order-buy-button'
