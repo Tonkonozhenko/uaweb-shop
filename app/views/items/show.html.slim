@@ -30,22 +30,28 @@
       - resource.items_viewed_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = link_to(image_tag('examples/similar-models.png'), item_path(item))
+            = link_to item_path(item) do
+              = image_tag('examples/similar-models.png')
+              .centered = item.title
     .bought-with-this.col-md-12.col-sm-12.row.more-items
       h4.uppercase = t('item.suitable_accessories')
       - resource.items_bought_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = link_to(image_tag('examples/accessories.png'),item_path(item))
+            = link_to item_path(item) do
+              = image_tag('examples/accessories.png')
+              .centered = item.title
     .must-buy.col-md-12.col-sm-12.row.more-items
       h4.uppercase = t('item.you_mast_buy')
       - resource.items_carted_with.each do |item|
         .col-md-5ths.col-sm-3.col-xs-6
           .more-item-image
-            = link_to(image_tag('examples/must_buy.png'),item_path(item))
+            = link_to item_path(item) do
+              = image_tag('examples/must_buy.png')
+              .centered = item.title
 
 
-    /h3 = "views: #{resource.views}"
+                /h3 = "views: #{resource.views}"
     /pre = JSON.pretty_generate(resource.viewed_with_this)
     /h3 buyes
     /pre = JSON.pretty_generate(resource.bought_with_this)
