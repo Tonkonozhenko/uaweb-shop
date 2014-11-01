@@ -17,6 +17,7 @@
     }
   }
   ul li {
+    margin: 2px 0;
     a {
       display: block;
       text-decoration: none;
@@ -32,6 +33,9 @@
     img {
       width: 100%;
     }
+  }
+  .item-active {
+    background: #dddddd;;
   }
 }
 
