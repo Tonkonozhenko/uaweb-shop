@@ -3,7 +3,7 @@
     .col-md-2.col-sm-6.col-xs-6
       .logo
         =link_to (image_tag('logo.png')), root_path
-    .col-md-1.col-sm-6.col-xs-6.pull-right
+    .col-md-2.col-sm-6.col-xs-6.pull-right
       .nav-actions
         .search-ico
           = link_to '#', id:'search' do
@@ -11,7 +11,7 @@
         .shopping-cart-ico
           = link_to cart_path do
             i.fa.fa-shopping-cart.actions-ico
-    .col-md-9.col-sm-12.col-xs-12
+    .col-md-8.col-sm-12.col-xs-12
       ul.nav.nav-justified.navigation
         li.uppercase.col-xs-12 = link_to t('header.shop'), root_path
         li.uppercase.col-xs-12 = link_to t('header.collection'), ''
