@@ -1,5 +1,5 @@
 .item-wrap
-  .col-md-6.col-sm-6.col-xs-6
+  .col-md-6.col-sm-6.col-xs-12
     .big-image
       = image_tag('examples/example-1.png')
     .small-images
@@ -9,10 +9,10 @@
         = image_tag('examples/example-1.png')
       .col-md-3.col-sm-3.col-xs-6
         = image_tag('examples/example-1.png')
-  .col-md-6.col-sm-6.col-xs-6.row
-    .col-md-8.col-sm-8.row
+  .col-md-6.col-sm-6.col-xs-12.row
+    .col-md-8.col-sm-8.col-xs-8.row
       h1 = resource.title
-    .col-md-4.col-sm-4.item-views
+    .col-md-4.col-sm-4.col-xs-4.item-views
       h3
         i.fa.fa-eye &nbsp
         = resource.views
