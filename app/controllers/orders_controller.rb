@@ -39,14 +39,8 @@ class OrdersController < ApplicationController
       @cart.save
     end
 
-    respond_to do |format|
-      format.json do
-
-      end
-      format.html do
-        redirect_to request.referer
-      end
-    end
+    flash[:notice] = t('notices.item_added')
+    redirect_to request.referer
   end
 
   def inc

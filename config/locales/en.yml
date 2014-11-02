@@ -23,9 +23,12 @@ en:
   title: UWC-SHOP
   actions:
     view: View
-    fail: Fail
-    success: Success
+    fail: Please fill your name and try again
+    success: Your order is created. We'll contact you soon
     try_again: Try again
+
+  notices:
+    item_added: Item added to cart
 
   header:
     shop: Shop
@@ -58,9 +61,9 @@ en:
   item:
     buy_it: Buy it
     colors: 'Colors: '
-    similar_models: 'Similar models: '
-    suitable_accessories: 'Suitable accessories for this costume: '
-    you_mast_buy: 'You must buy it with this suit: '
+    similar_models: "Also viewed with this:"
+    suitable_accessories: "Also bought with this:"
+    you_mast_buy: "Also put to cart with this:"
 
   search:
     find: 'Find me if u can'

@@ -5,6 +5,10 @@ class Order < ActiveRecord::Base
   scope :carts, -> { where(buyer_name: nil) }
   scope :orders, -> { where.not(buyer_name: nil) }
 
+  def cart?
+    buyer_name.nil?
+  end
+
   def add(item)
     items.each do |i|
       i.inc_carted(item.id)

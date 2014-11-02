@@ -28,7 +28,7 @@
         td.col-md-2.col-sm-2.centered.information = link_to item.title, item_path(item.id)
         td.col-md-2.col-sm-2.centered.information = image_tag('examples/example-1.png')
         td.col-md-1.col-sm-1.centered.information = oi.count
-        td.col-md-2.col-sm-2.centered.information = oi.price
+        td.col-md-2.col-sm-2.centered.information = oi.each_price
         - total += oi.price
         td.col-md-3.col-sm-3.centered.information
           .col-md-4.col-sm-4.centered.information
